@@ -1,10 +1,8 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import checkout from '../../assets/checkout.svg';
 import { Container } from './styles';
 
 export default function Checkout() {
-	const [cartData, setCartData] = useState([]);
 	return (
 		<Container>
 			<div className='cartContainer'>
@@ -13,7 +11,7 @@ export default function Checkout() {
 						<h1>Compra realizada com sucesso!</h1>
 						<img src={checkout} />
 					</div>
-					<Link to={'/home'} type='button' className='returnLink'>
+					<Link to={'/home'} className='returnLink'>
 						VOLTAR
 					</Link>
 				</div>

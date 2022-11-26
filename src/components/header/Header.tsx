@@ -1,8 +1,12 @@
 import { Container } from './styles';
 import cartBag from '../../assets/cartBag.svg';
 import { Link } from 'react-router-dom';
+import { useCart } from '../../hook/useCart';
 
 export default function Header() {
+	const { cart } = useCart();
+	const cartSize = cart.length;
+
 	return (
 		<Container>
 			<header>
@@ -17,7 +21,7 @@ export default function Header() {
 						</div>
 
 						<div className='cartItens'>
-							<p>0 itens</p>
+							<p>{cartSize === 1 ? `${cartSize} item` : `${cartSize} itens`}</p>
 						</div>
 					</div>
 

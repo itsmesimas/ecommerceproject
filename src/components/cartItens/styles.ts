@@ -105,13 +105,22 @@ export const Container = styled.div`
 								height: 26px;
 								border-radius: 4px;
 								border: 1px solid var(--grey);
+								padding: 3.5px 0 3.5px 16px;
+								color: var(--background);
 							}
 
 							.minusIcon,
 							.moreIcon {
+								border: none;
 								width: 18px;
 								height: 18px;
 								cursor: pointer;
+								display: flex;
+								align-items: center;
+
+								&:disabled {
+									cursor: not-allowed;
+								}
 							}
 
 							.minusIcon {
@@ -140,11 +149,17 @@ export const Container = styled.div`
 								display: flex;
 								justify-content: flex-start;
 								align-items: center;
-								cursor: pointer;
 
-								img {
-									width: 18px;
-									height: 18px;
+								button {
+									display: flex;
+									justify-content: center;
+									align-items: center;
+									border: none;
+
+									img {
+										width: 18px;
+										height: 18px;
+									}
 								}
 							}
 						}
@@ -158,7 +173,6 @@ export const Container = styled.div`
 
 			.finishPurchaseButtonContainer {
 				width: 100%;
-				/* border-top: 2px solid var(--grey); */
 
 				.finishPurchaseButtonContent {
 					margin: 21px 24px 24px 24px;
@@ -175,7 +189,15 @@ export const Container = styled.div`
 						margin-top: 21px;
 
 						.buttonContainer {
-							button {
+							width: 100%;
+							display: flex;
+							justify-content: flex-start;
+							align-items: center;
+
+							.finishLink {
+								display: flex;
+								justify-content: center;
+								align-items: center;
 								width: 235px;
 								height: 40px;
 								color: var(--white);
@@ -184,13 +206,15 @@ export const Container = styled.div`
 								border-radius: 4px;
 								font-weight: bold;
 								font-size: 14px;
+								text-decoration: none;
 							}
 						}
 
 						.totalContainer {
 							display: flex;
-							justify-content: center;
-							align-items: flex-end;
+							justify-content: flex-end;
+							align-items: center;
+							width: 100%;
 
 							h1 {
 								font-weight: bold;
@@ -264,6 +288,19 @@ export const Container = styled.div`
 										align-items: center;
 										margin-top: 22px;
 
+										.minusIcon,
+										.moreIcon {
+											border: none;
+											cursor: pointer;
+											display: flex;
+											justify-content: center;
+											align-items: center;
+
+											&:disabled {
+												cursor: not-allowed;
+											}
+										}
+
 										.minusIcon {
 											margin-right: 11px;
 										}
@@ -275,6 +312,7 @@ export const Container = styled.div`
 										input {
 											width: 59px;
 											height: 26px;
+											padding: 3.5px 0 3.5px 12px;
 										}
 									}
 								}
@@ -297,7 +335,11 @@ export const Container = styled.div`
 										color: var(--background);
 									}
 
-									.trashcan {
+									button {
+										display: flex;
+										justify-content: center;
+										align-items: center;
+										border: none;
 										margin-left: 16px;
 									}
 								}
@@ -327,6 +369,7 @@ export const Container = styled.div`
 
 				.finishPurchaseButtonContainer {
 					width: 100%;
+
 					.finishPurchaseButtonContent {
 						.finishPurchaseAndTotal {
 							width: 100%;
@@ -336,7 +379,7 @@ export const Container = styled.div`
 							.buttonContainer {
 								width: 100%;
 
-								button {
+								.finishLink {
 									width: 100%;
 								}
 							}
